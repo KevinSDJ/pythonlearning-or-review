@@ -1,5 +1,6 @@
-edad=int(input('Ingresa tu edad: '))
 
+# Ejercicio 1
+edad=int(input('Ingresa tu edad: '))
 if edad <18:
     print("Eres un crio")
 else:
