@@ -9,11 +9,15 @@ else:
 
 
 #Ejercicio 2
-
 inicial=int(input('Valor de inicio: '))
 final= int(input('Valor de finalzacion: '))
-
 
 for number in range(inicial,final):
     if number%2!=0:
         print(number)
+
+
+#Ejercicio 3
+
+for number in range(100,1,-1):
+    print(number)
