@@ -2,7 +2,6 @@
 # Ejercicio 1
 import math
 
-# coding=utf-8
 
 edad=int(input('Ingresa tu edad: '))
 if edad <18:
@@ -25,13 +24,19 @@ for number in range(100,1,-1):
     print(number)
 
 
-#Leccion 6 , Ejercicio 1
+##Tema 5 
+# Ejercicio 1
 
 def triangleArea(altura,base):
-   print("------------Triangle area-------------")
+   print("------------Triagulo area-------------")
    return (base*altura)/2
 def circleRadio(radio):
-    print("------------Circle area-------------")
+    print("------------Circulo area-------------")
     return (radio*math.pi)**2
 
-circleRadio(20)
+# Ejercicio 2
+def prim_or_not_prim(number):
+    print('-------Numbero primo------')
+    isPrim= (number%2==0) and 'not' or'yes'
+    return isPrim
+print(prim_or_not_prim(3))
