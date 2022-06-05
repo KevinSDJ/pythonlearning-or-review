@@ -1,5 +1,6 @@
 
 # Ejercicio 1
+
 import math
 
 
@@ -35,8 +36,17 @@ def circleRadio(radio):
     return (radio*math.pi)**2
 
 # Ejercicio 2
-def prim_or_not_prim(number):
+def prim_or_not_prim(numero):
     print('-------Numbero primo------')
-    isPrim= (number%2==0) and 'not' or'yes'
+    isPrim= (numero%2==0) and 'not' or'yes'
     return isPrim
 print(prim_or_not_prim(3))
+
+# Ejercicio 3
+def bisiest_year(año):
+    isbisiesto =año % 400 == 0 and True or año% 100 == 0 and False or año % 4 == 0;
+    print(isbisiesto)
+  				
+
+
+bisiest_year(2024)
