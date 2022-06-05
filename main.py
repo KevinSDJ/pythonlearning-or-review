@@ -28,6 +28,7 @@ for number in range(100,1,-1):
 #Leccion 6 , Ejercicio 1
 
 def triangleArea(altura,base):
+   print("------------Triangle area-------------")
    return (base*altura)/2
 def circleRadio(radio):
     print("------------Circle area-------------")
