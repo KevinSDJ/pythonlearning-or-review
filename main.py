@@ -2,6 +2,7 @@
 # Ejercicio 1
 
 import math
+import string
 
 
 edad=int(input('Ingresa tu edad: '))
@@ -51,7 +52,7 @@ bisiest_year(2024)
 
 ##Tema 6
 
-#Ejercicio 1 , Clases
+#Ejercicio 1 
 class Vehiculo():
     _Color=''
     _Ruedas=0
@@ -77,3 +78,25 @@ class Coche(Vehiculo):
 
 micoche= Coche()
 print(micoche)
+
+#Ejercicio 2
+class Alumno():
+    _Nombre=0
+    _Nota=0
+    def setNota(self,nota):
+        self._Nota=nota
+    def getNota(self):
+        return self._Nota
+    def getResult(self):
+        print(self._Nota>=60 and f'Aprobado {self._Nota}' or f'Desaprobado {self._Nota}')
+    def setNombre(self,nombre):
+        self._Nombre=nombre
+    def getNombre(self):
+        return self._Nombre
+        
+alumno1= Alumno()
+alumno1.setNombre('kevin')
+alumno1.setNota(55)
+alumno1.getResult()
+print(alumno1.getNombre())
+
