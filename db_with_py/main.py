@@ -10,6 +10,7 @@ import sqlite3
 checkTableQuery="""SELECT name FROM sqlite_master WHERE type='table' AND name='Alumnos'"""
 initTableAlumno="""CREATE TABLE Alumnos (id INTEGER PRIMARY KEY AUTOINCREMENT,nombre TEXT,apellido TEXT NOT NULL);"""
 viewAllData="""SELECT * FROM Alumnos;"""
+srAlumnQuery=lambda strg:f"SELECT * FROM Alumnos WHERE nombre LIKE '%{strg}%';"
 def testTable ():
     conn=sqlite3.connect('datos.db')
     cursor= conn.cursor()
@@ -51,6 +52,14 @@ def showData():
      conn.close()
      print(rows)
 
+def searchAlumn(pattern):
+    conn= sqlite3.connect('datos.db')
+    cursor=conn.cursor()
+    rows=cursor.execute(srAlumnQuery(pattern)).fetchall()
+    cursor.close()
+    conn.close()
+    print(rows)
+
 def main ():
     nextInsert=True
     result = iniTable()
@@ -66,5 +75,11 @@ def main ():
             nextInsert=False
     print('Datos cargados:\n')
     showData()
+    ask=str(input('Quieres buscar un alumno en concreto?  si / no'))
+    resp= ask.lower().startswith('s')
+    if resp:
+        pattern=str(input('Ingresa el nombre o patron del nombre a buscar: '))
+        searchAlumn(pattern)
+
 
 main()
