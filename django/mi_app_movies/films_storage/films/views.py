@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from films.models import Film
+import sqlite3
 # Create your views here.
 
+
 def index(request):
-    lista=["s","d","9","seew",2,"dsad","dsda","dsada"]
+    d= Film.objects.all()
     return render(request,'index.html',context={
-        "lista":lista
+        "lista":d
     })
