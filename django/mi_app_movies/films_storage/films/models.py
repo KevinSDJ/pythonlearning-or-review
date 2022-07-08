@@ -3,8 +3,10 @@ import datetime
 import uuid
 import os
 from pathlib import Path
+from django.db.models.signals import pre_save
 
 BASE_DIR= Path(__file__).resolve().parent.parent
+
 # Create your models here.
 dateNow= datetime.datetime.now()
 class Genre(models.Model):
@@ -32,7 +34,15 @@ class Productor(models.Model):
     data_birth= models.DateField(null=True)
     films= models.ManyToManyField(Film)
     createDT= models.CharField(max_length=32,default=dateNow)
+    slug=models.SlugField(max_length=100,null=True,blank=True)
     def __str__(self):
         return self.lastName
 
+#mixin
+def slug_config(sender,instance,*args,**kwargs):
+    if not instance.slug:
+        instance.slug= instance.firstName+'-'+instance.lastName
+    else :
+        instance.slug= instance.firstName+'-'+instance.lastName
 
+pre_save.connect(slug_config,sender=Productor)

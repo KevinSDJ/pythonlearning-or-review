@@ -1,19 +1,11 @@
-#text{
-  color:green;
-  background-color:Black
-}
-html,
-body {
-    position: relative;
-    height: 100%;
-    width:100%;
-}
 
-body {
-  margin: 0;
-  padding: 0
-}
 
+#nav{
+  background-color:rgb(20,28,89);
+}
+.nav-link{
+  color:white;
+}
 .swiper {
   width: 100%;
   height: 80vh;
@@ -34,15 +26,15 @@ body {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
-  flex-direction:row
 }
 
 .swiper-slide {
-  width: auto;
+  width: "auto";
   height:max-content;
 }
 
 .swiper-pagination{
-  color:Black;
+  color:black;
   background-color:white;
 }
+

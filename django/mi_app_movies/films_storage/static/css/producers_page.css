@@ -1,0 +1,17 @@
+#sidb-pr{
+  background-color:rgb(20,28,89);
+}
+#pr-photo{
+  border-radius: 4rem 10rem 5rem 10rem;
+}
+#cd-overlay{
+  height:max-content;
+  background-color:rgba(0,0,0,0.5);
+}
+#cd-title{
+  color:white;
+}
+#cd-sinopsis{
+  font-size:0.7rem;
+  color:white;
+}

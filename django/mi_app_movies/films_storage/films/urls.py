@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns=[
-    path('',views.index,name='home')
+    path('',views.index,name='home'),
+    path('producers/<slug:slug_parameter>/',views.producer,name="producer")
 ]
